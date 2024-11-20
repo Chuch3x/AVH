@@ -1,11 +1,9 @@
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
-from commit_ccn.infraestructure.FlaskCommitMetricsController import app as application
+from commit_ccn.infraestructure.FlaskCommitMetricsController import app
 
-def main(request=None):
-    return application
-
+# Exponer la aplicación Flask
 if __name__ == "__main__":
-    application.run()
+    app.run(debug=True)
