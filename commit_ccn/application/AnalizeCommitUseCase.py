@@ -5,10 +5,10 @@ import zipfile
 import tempfile
 import os
 import logging
-from domain.CommitMetrics import CommitMetrics
-from domain.CommitMetricsRepository import CommitMetricsRepository
+from commit_ccn.domain.CommitMetrics import CommitMetrics
+from commit_ccn.domain.CommitMetricsRepository import CommitMetricsRepository
 import re
-from shared.repo_utils import parse_repo_url
+from commit_ccn.shared.repo_utils import parse_repo_url
  
 class AnalyzeCommitUseCase:
     def __init__(self, repository: CommitMetricsRepository):

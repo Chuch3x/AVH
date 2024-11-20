@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List
-from domain.CommitMetrics import CommitMetrics
+from commit_ccn.domain.CommitMetrics import CommitMetrics
 
 class CommitMetricsRepository(ABC):
     @abstractmethod
