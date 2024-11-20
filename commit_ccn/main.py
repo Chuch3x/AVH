@@ -1,6 +1,7 @@
-print("Starting main.py")
-from infraestructure.FlaskCommitMetricsController import app
-print("Import successful")
+from infraestructure.FlaskCommitMetricsController import app as application
+
+def main(request=None):
+    return application
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(debug=True)
