@@ -23,6 +23,10 @@ analyze_by_commit = GetCcnByCommitUseCase(repository)
 MISSING_REPO_URL_MESSAGE = "No se proporcionó el enlace del repositorio."
 ERROR_PROCESSING_REPO_MESSAGE = "Error al procesar el repositorio"
 
+@app.route('/')
+def home():
+    return "API funcionando en Vercel"
+
 @app.route('/analyze', methods=['POST'])
 def analyze():
     data = request.get_json()
@@ -33,7 +37,6 @@ def analyze():
         return jsonify({"error": MISSING_REPO_URL_MESSAGE}), 400
 
     try:
-        # Ejecutar el caso de uso en este caso el de analyze
         metrics = analyze_use_case.analyze_repo(repo_url)
         return jsonify({"metrics": [m.__dict__ for m in metrics]})
     except Exception as e:
