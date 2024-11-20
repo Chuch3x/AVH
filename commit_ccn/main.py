@@ -1,4 +1,6 @@
+print("Starting main.py")
 from infraestructure.FlaskCommitMetricsController import app
+print("Import successful")
 
-# Exponer la app para que Vercel la detecte
-app = app
+if __name__ == "__main__":
+    app.run(debug=True)

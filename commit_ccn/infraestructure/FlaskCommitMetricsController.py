@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
-from ..application.AnalizeCommitUseCase import AnalyzeCommitUseCase
-from ..application.GetCcnByCommitUseCase import GetCcnByCommitUseCase
-from commit_ccn.infraestructure.InMemoryCommitMetricsRepository import InMemoryUserCommitMetricsRepository
+from application.AnalizeCommitUseCase import AnalyzeCommitUseCase
+from application.GetCcnByCommitUseCase import GetCcnByCommitUseCase
+from infraestructure.InMemoryCommitMetricsRepository import InMemoryUserCommitMetricsRepository
 import logging
 import os
 from concurrent.futures import ThreadPoolExecutor
@@ -16,7 +16,7 @@ logging.basicConfig(
     ]
 )
 
-repository = InMemoryUserCommitMetricsRepository
+repository = InMemoryUserCommitMetricsRepository()
 analyze_use_case = AnalyzeCommitUseCase(repository)
 analyze_by_commit = GetCcnByCommitUseCase(repository)
 
